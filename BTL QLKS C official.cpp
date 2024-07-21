@@ -3,7 +3,7 @@
 
 #define MAX 100
 
-// C?u trúc KhachHang
+// C?u trÃºc KhachHang
 typedef struct {
     char ten[100];
     char diaChi[100];
@@ -14,7 +14,7 @@ typedef struct {
     int maDatPhong;
 } KhachHang;
 
-// C?u trúc Phong
+// C?u trÃºc Phong
 typedef struct {
     char loai;
     char kieu;
@@ -25,11 +25,11 @@ typedef struct {
     KhachHang kh;
 } Phong;
 
-// Khai báo toàn c?c
+// Khai bÃ¡o toÃ n c?c
 Phong phongs[MAX];
 int count = 0;
 
-// Hàm thêm phòng
+// HÃ m thÃªm phÃ²ng
 Phong themPhong(int soPhong) {
     Phong phong;
     phong.soPhong = soPhong;
@@ -46,7 +46,7 @@ Phong themPhong(int soPhong) {
     return phong;
 }
 
-// Hàm hi?n th? phòng
+// HÃ m hi?n th? phÃ²ng
 void hienThiPhong(Phong tempPhong) {
     printf("\nSo phong: \t%d", tempPhong.soPhong);
     printf("\nLoai dieu hoa (C/K) %c", tempPhong.dieuHoa);
@@ -54,7 +54,7 @@ void hienThiPhong(Phong tempPhong) {
     printf("\nLoai kich thuoc (L/N) %c", tempPhong.kieu);
     printf("\nGia thue: %d", tempPhong.giaThue);
 }
-// Hàm tìm phòng
+// HÃ m tÃ¬m phÃ²ng
 void timPhong(int soPhong) {
     int i, timThay = 0;
     for (i = 0; i < count; i++) {
@@ -78,7 +78,7 @@ void timPhong(int soPhong) {
 
 
 
-// Hàm báo cáo khách
+// HÃ m bÃ¡o cÃ¡o khÃ¡ch
 void baoCaoKhach() {
     if (count == 0) {
         printf("\nKhong co khach trong khach san !!");
@@ -94,7 +94,7 @@ void baoCaoKhach() {
     }
 }
 
-// Hàm check-in phòng
+// HÃ m check-in phÃ²ng
 void checkIn() {
     int i, timThay = 0, soPhong;
 
@@ -113,25 +113,25 @@ void checkIn() {
         }
 
         printf("\nNhap ten khach hang (ten dau tien): ");
-        getchar();  // Ð?c ký t? m?i
+        getchar();  // Ã?c kÃ½ t? m?i
         fgets(phongs[i].kh.ten, sizeof(phongs[i].kh.ten), stdin);
-        phongs[i].kh.ten[strcspn(phongs[i].kh.ten, "\n")] = '\0'; // Lo?i b? ký t? newline
+        phongs[i].kh.ten[strcspn(phongs[i].kh.ten, "\n")] = '\0'; // Lo?i b? kÃ½ t? newline
 
         printf("\nNhap dia chi (chi thanh pho): ");
         fgets(phongs[i].kh.diaChi, sizeof(phongs[i].kh.diaChi), stdin);
-        phongs[i].kh.diaChi[strcspn(phongs[i].kh.diaChi, "\n")] = '\0'; // Lo?i b? ký t? newline
+        phongs[i].kh.diaChi[strcspn(phongs[i].kh.diaChi, "\n")] = '\0'; // Lo?i b? kÃ½ t? newline
 
         printf("\nNhap dien thoai: ");
         fgets(phongs[i].kh.dienThoai, sizeof(phongs[i].kh.dienThoai), stdin);
-        phongs[i].kh.dienThoai[strcspn(phongs[i].kh.dienThoai, "\n")] = '\0'; // Lo?i b? ký t? newline
+        phongs[i].kh.dienThoai[strcspn(phongs[i].kh.dienThoai, "\n")] = '\0'; // Lo?i b? kÃ½ t? newline
 
         printf("\nNhap ngay den: ");
         fgets(phongs[i].kh.tuNgay, sizeof(phongs[i].kh.tuNgay), stdin);
-        phongs[i].kh.tuNgay[strcspn(phongs[i].kh.tuNgay, "\n")] = '\0'; // Lo?i b? ký t? newline
+        phongs[i].kh.tuNgay[strcspn(phongs[i].kh.tuNgay, "\n")] = '\0'; // Lo?i b? kÃ½ t? newline
 
         printf("\nNhap ngay di: ");
         fgets(phongs[i].kh.denNgay, sizeof(phongs[i].kh.denNgay), stdin);
-        phongs[i].kh.denNgay[strcspn(phongs[i].kh.denNgay, "\n")] = '\0'; // Lo?i b? ký t? newline
+        phongs[i].kh.denNgay[strcspn(phongs[i].kh.denNgay, "\n")] = '\0'; // Lo?i b? kÃ½ t? newline
 
         printf("\nNhap tien tam ung: ");
         scanf("%f", &phongs[i].kh.tienTamUng);
@@ -142,7 +142,7 @@ void checkIn() {
     }
 }
 
-// Hàm ki?m tra phòng tr?ng
+// HÃ m ki?m tra phÃ²ng tr?ng
 void phongTrong() {
     int i, timThay = 0;
     for (i = 0; i < count; i++) {
@@ -157,7 +157,7 @@ void phongTrong() {
     }
 }
 
-// Hàm tìm khách hàng
+// HÃ m tÃ¬m khÃ¡ch hÃ ng
 void timKhachHang(char *ten) {
     int i, timThay = 0;
     for (i = 0; i < count; i++) {
@@ -173,7 +173,7 @@ void timKhachHang(char *ten) {
     }
 }
 
-// Hàm check-out phòng
+// HÃ m check-out phÃ²ng
 void checkOut(int soPhong) {
     int i, timThay = 0, soNgay;
     float tienPhong = 0;
@@ -201,7 +201,7 @@ void checkOut(int soPhong) {
     }
 }
 
-// Hàm qu?n lý phòng
+// HÃ m qu?n lÃ½ phÃ²ng
 void quanLyPhong() {
     int opt, soPhong, i, flag = 0;
     do {
@@ -212,7 +212,7 @@ void quanLyPhong() {
         printf("\n\nNhap lua chon: ");
         scanf("%d", &opt);
 
-        // Câu l?nh switch
+        // CÃ¢u l?nh switch
         switch (opt) {
         case 1:
             printf("\nNhap so phong: ");
@@ -237,7 +237,7 @@ void quanLyPhong() {
             timPhong(soPhong);
             break;
         case 3:
-            // Không làm gì c?
+            // KhÃ´ng lÃ m gÃ¬ c?
             break;
         default:
             printf("\nVui long nhap lua chon dung");
@@ -246,7 +246,7 @@ void quanLyPhong() {
     } while (opt != 3);
 }
 
-// Hàm main
+// HÃ m main
 int main() {
     int opt, soPhong;
     char tenKhach[100];
@@ -283,9 +283,9 @@ int main() {
                 printf("\nKhong co phong.\nVui long them phong truoc.");
             } else {
                 printf("Nhap ten khach hang: ");
-                getchar();  // Ð?c ký t? m?i
+                getchar();  // Ã?c kÃ½ t? m?i
                 fgets(tenKhach, sizeof(tenKhach), stdin);
-                tenKhach[strcspn(tenKhach, "\n")] = '\0'; // Lo?i b? ký t? newline
+                tenKhach[strcspn(tenKhach, "\n")] = '\0'; // Lo?i b? kÃ½ t? newline
                 timKhachHang(tenKhach);
             }
             break;
