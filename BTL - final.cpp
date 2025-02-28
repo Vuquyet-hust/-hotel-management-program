@@ -4,7 +4,7 @@
 #include <string.h>
 #include <cstdlib>
 #define MAX 100
-
+helloo i.m quyết
 using namespace std;
 
 // Khai bao cau truc du lieu khach hang trong ds
